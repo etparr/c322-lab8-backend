@@ -2,13 +2,10 @@ package edu.iu.habahram.ducksservice.controllers;
 
 import edu.iu.habahram.ducksservice.model.Customer;
 import edu.iu.habahram.ducksservice.repository.CustomerRepository;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS})
 public class AuthenticationController {
     CustomerRepository customerRepository;
     public AuthenticationController(CustomerRepository customerRepository) {
